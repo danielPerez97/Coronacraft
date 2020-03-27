@@ -21,7 +21,7 @@ import java.util.stream.Collectors
 
 @Mod(MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-object FunMod
+object Coronacraft
 {
     private val LOGGER = LogManager.getLogger()
 

@@ -14,4 +14,4 @@ pluginManagement {
         }
     }
 }
-rootProject.name = "FunMod"
+rootProject.name = "Coronacraft"

@@ -5,8 +5,8 @@ plugins {
     id("net.minecraftforge.gradle") version "3.0.161"
 }
 
-group = "daniel.perez.minecraft"
-version = "0.1"
+group = rootProject.findProperty("modGroup") as String
+version = rootProject.findProperty("modVersion") as String
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -23,21 +23,31 @@ repositories {
 }
 
 dependencies {
+
+    // Minecraft Forge
+    // https://files.minecraftforge.net/
     minecraft("net.minecraftforge:forge:1.15.2-31.1.0")
 
+    // Kotlin
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     implementation("kottle:Kottle:1.4.0:slim")
 
+    // JUnit
     testImplementation("junit:junit:4.12")
     
     // RxJava 3
     implementation("io.reactivex.rxjava3:rxjava:3.0.0")
 }
 minecraft {
+
+    // Minecraft Coder Pack Channel + Version
+    // http://export.mcpbot.bspk.rs/
     mappingChannel = "snapshot"
     mappingVersion = "20200215-1.15.1"
     accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
+
+    // For genIntelliJruns
     runs {
         listOf("client", "server").forEach {
             create(it) {
