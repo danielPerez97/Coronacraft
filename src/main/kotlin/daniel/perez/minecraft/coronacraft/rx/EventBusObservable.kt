@@ -1,4 +1,4 @@
-package daniel.perez.minecraft.funmod
+package daniel.perez.minecraft.coronacraft.rx
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
