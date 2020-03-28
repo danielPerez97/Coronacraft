@@ -27,10 +27,12 @@ inline fun <reified T: Event> IEventBus.events(): Observable<T>
                 override fun dispose()
                 {
                     this@events.unregister(this)
+                    disposed = true
                 }
             }
-            this@events.addListener(listener)
             observer.onSubscribe(listener)
+
+            this@events.addListener(listener)
         }
 
     }

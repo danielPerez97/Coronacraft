@@ -1,9 +1,9 @@
 package daniel.perez.minecraft.coronacraft.registration
 
 import daniel.perez.minecraft.coronacraft.MODID
-import daniel.perez.minecraft.coronacraft.blocks.BaseBlock
+import daniel.perez.minecraft.coronacraft.base.BaseBlock
 import daniel.perez.minecraft.coronacraft.blocks.WoodBlock
-import daniel.perez.minecraft.coronacraft.items.BaseBlockItem
+import daniel.perez.minecraft.coronacraft.base.BaseBlockItem
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 import net.minecraftforge.event.RegistryEvent
@@ -32,7 +32,7 @@ object ModBlocks
     fun registerBlockItems(itemRegistryEvent: RegistryEvent.Register<Item>)
     {
         blocks.forEach {
-            itemRegistryEvent.registry.register( BaseBlockItem( it, it.blockItemProperties() ) )
+            itemRegistryEvent.registry.register(BaseBlockItem(it, it.blockItemProperties()))
         }
     }
 }
