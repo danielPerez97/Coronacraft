@@ -3,5 +3,6 @@
   "block.coronacraft.wood_block": "Wood Block",
 
   "_comment": "Items",
-  "item.coronacraft.wood_item": "Wood Item"
+  "item.coronacraft.wood_item": "Wood Item",
+  "item.coronacraft.chickenizer": "Chickenizer"
 }
