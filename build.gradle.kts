@@ -1,4 +1,6 @@
-import java.util.*
+import java.util.Date
+
+val modId: String = (rootProject.findProperty("modBaseName")!! as String).toLowerCase()
 
 plugins {
     kotlin("jvm") version "1.3.61"
@@ -6,7 +8,11 @@ plugins {
 }
 
 group = rootProject.findProperty("modGroup") as String
-version = rootProject.findProperty("modVersion") as String
+version = (rootProject.findProperty("modVersion") as String).toLowerCase()
+
+base {
+    archivesBaseName = modId
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -39,6 +45,7 @@ dependencies {
     // RxJava 3
     implementation("io.reactivex.rxjava3:rxjava:3.0.0")
 }
+
 minecraft {
 
     // Minecraft Coder Pack Channel + Version
@@ -58,7 +65,7 @@ minecraft {
                 property("forge.logging.console.level", "info")
 
                 mods {
-                    create("funmod") {
+                    create(modId) {
                         source(sourceSets.main.get())
                     }
                 }
